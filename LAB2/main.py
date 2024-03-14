@@ -292,31 +292,55 @@ print("Updated Dictionary:", numbers_dict)
 input_numbers = input("Enter a series of space-separated integers: ")
 
 # Convert Input
+numbers_list = [int(x) for x in input_numbers.split()]
+numbers_tuple = tuple(numbers_list)
+numbers_set = set(numbers_list)
+numbers_dict = {x: x**2 for x in numbers_list}
 
 # Manipulate List
+numbers_list.append(10)
+numbers_list.insert(2, 20)
+numbers_list.remove(8)
 
 # Attempt to Modify Tuple (this will raise an error)
-
+try:
+    numbers_tuple.append(10)
+except AttributeError:
+    print("Tuples are immutable and cannot be modified.")
 # Set Operations
 
 # Dictionary Operations
 print("Original Dictionary:", numbers_dict)
 # Add a new key-value pair
+numbers_dict[11] = 121
 # Delete an existing key-value pair
+del numbers_dict[8]
 
 # Type Conversion
 # list_to_tuple =
+list_to_tuple = tuple(numbers_list)
 # list_to_set =
+list_to_set = set(numbers_list)
 # list_to_dict =
+list_to_dict = {x: x**2 for x in numbers_list}
 # tuple_to_list =
+tuple_to_list = list(numbers_tuple)
 # tuple_to_set =
+tuple_to_set = set(numbers_tuple)
 # tuple_to_dict =
+tuple_to_dict = {x: x**2 for x in numbers_tuple}
 # set_to_list =
+set_to_list = list(numbers_set)
 # set_to_tuple =
+set_to_tuple = tuple(numbers_set)
 # set_to_dict =
+set_to_dict = {x: x**2 for x in numbers_set}
 # dict_to_list =
+dict_to_list = list(numbers_dict.keys())
 # dict_to_tuple =
+dict_to_tuple = tuple(numbers_dict.keys())
 # dict_to_set =
+dict_to_set = set(numbers_dict.keys())
 
 # Print Output
 print("List to Tuple:", list_to_tuple)
